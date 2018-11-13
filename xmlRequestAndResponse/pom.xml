@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sbs</artifactId>
+        <groupId>cn.yin</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>xmlRequestAndResponse</artifactId>
+
+    <dependencies>
+        <!--
+            在传统Spring应用中，我们可以通过如下配置加入对Xml格式数据的消息转换实现：
+
+            @Configuration
+            public class MessageConverterConfig1 extends WebMvcConfigurerAdapter {
+                @Override
+                public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+                    Jackson2ObjectMapperBuilder builder = Jackson2ObjectMapperBuilder.xml();
+                    builder.indentOutput(true);
+                    converters.add(new MappingJackson2XmlHttpMessageConverter(builder.build()));
+                }
+            }
+            在Spring Boot应用不用像上面这么麻烦，只需要加入jackson-dataformat-xml依赖，
+            Spring Boot就会自动引入MappingJackson2XmlHttpMessageConverter的实现：
+        -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
