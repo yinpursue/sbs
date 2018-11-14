@@ -6,13 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = {
-        "cn.yin.model",
-        "cn.yin.service.impl"
-})
-@MapperScan(basePackages = {"cn.yin.model.dao"})
+
 @SpringBootApplication
-@EnableCaching
 public class Start {
     public static void main(String[] args) {
         SpringApplication.run(Start.class, args);
